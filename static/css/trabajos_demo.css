@@ -1,0 +1,471 @@
+/* Box-sizing global para evitar desbordamientos innecesarios */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Variables y estilos base */
+:root {
+  --jm-color-primary: #f7b731;
+  --jm-color-primary-hover: #e8a70e;
+  --jm-color-dark: #333;
+  --jm-color-light: #fff;
+  --jm-color-gray: #666;
+  --jm-bg-light: #f9f9f9;
+  --jm-bg-dark: #1a1a1a;
+  --jm-card-bg-light: #fff;
+  --jm-card-bg-dark: #2a2a2a;
+  --jm-modal-text-light: #333; /* Nuevo: Color de texto para modal en modo claro */
+  --jm-modal-text-dark: #fff;  /* Nuevo: Color de texto para modal en modo oscuro */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--jm-bg-light);
+  color: var(--jm-color-dark);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.jm-dark-mode {
+  background-color: var(--jm-bg-dark);
+  color: var(--jm-color-light);
+}
+
+/* Contenedor principal */
+.jm-main-container {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 60px;
+}
+
+/* Header */
+.jm-header {
+  text-align: center;
+  padding: 30px 0 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.jm-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: bold;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+body:not(.jm-dark-mode) .jm-header h1 {
+  color: #636363;
+}
+
+body.jm-dark-mode .jm-header h1 {
+  color: var(--jm-color-light);
+}
+
+.jm-header h1 span {
+  color: var(--jm-color-primary);
+}
+
+.jm-header::after {
+  content: 'works';
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(5rem, 15vw, 10rem);
+  z-index: 1;
+  opacity: 0.1;
+  white-space: nowrap;
+}
+
+body:not(.jm-dark-mode) .jm-header::after {
+  color: rgb(102 102 102);
+}
+
+body.jm-dark-mode .jm-header::after {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+/* Contenedor */
+.jm-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Filtros */
+.jm-portfolio-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.jm-filter-btn {
+  padding: 8px 20px;
+  background: none;
+  border: 2px solid var(--jm-color-primary);
+  color: var(--jm-color-primary);
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+}
+
+.jm-filter-btn:hover, .jm-filter-btn.jm-active {
+  background-color: var(--jm-color-primary);
+  color: var(--jm-color-light);
+}
+
+body.jm-dark-mode .jm-filter-btn {
+  color: var(--jm-color-light);
+  border-color: var(--jm-color-light);
+}
+
+body.jm-dark-mode .jm-filter-btn:hover,
+body.jm-dark-mode .jm-filter-btn.jm-active {
+  background-color: var(--jm-color-primary);
+  color: var(--jm-color-dark);
+  border-color: var(--jm-color-primary);
+}
+
+/* Grid de proyectos */
+.jm-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas de proyecto */
+.jm-project-card {
+  background-color: var(--jm-card-bg-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: none;
+}
+
+.jm-project-card.jm-active {
+  display: block;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+body.jm-dark-mode .jm-project-card {
+  background-color: var(--jm-card-bg-dark);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.jm-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+body.jm-dark-mode .jm-project-card:hover {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Imágenes de proyectos */
+.jm-project-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.jm-project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.jm-project-card:hover .jm-project-image img {
+  transform: scale(1.05);
+}
+
+/* Info de proyectos */
+.jm-project-info {
+  padding: 20px;
+}
+
+.jm-project-info h3 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 10px;
+  color: var(--jm-color-dark);
+}
+
+body.jm-dark-mode .jm-project-info h3 {
+  color: var(--jm-color-light);
+}
+
+.jm-project-info p {
+  color: var(--jm-color-gray);
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+body.jm-dark-mode .jm-project-info p {
+  color: #aaa;
+}
+
+/* Botones */
+.jm-project-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.jm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--jm-color-primary);
+  border-radius: 30px;
+  color: var(--jm-color-light);
+  text-transform: uppercase;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.jm-btn:hover {
+  background-color: var(--jm-color-primary-hover);
+}
+
+.jm-btn-outline {
+  background: transparent;
+  border: 2px solid var(--jm-color-primary);
+  color: var(--jm-color-primary);
+}
+
+body.jm-dark-mode .jm-btn-outline {
+  color: var(--jm-color-light);
+  border-color: var(--jm-color-light);
+}
+
+.jm-btn-outline:hover {
+  background-color: var(--jm-color-primary);
+  color: var(--jm-color-light);
+}
+
+/* MODAL DE DETALLES - ESTILOS ACTUALIZADOS */
+.jm-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+  backdrop-filter: blur(5px);
+}
+
+.jm-modal.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.jm-modal-content {
+  position: relative;
+  background-color: var(--jm-card-bg-light);
+  margin: 20px;
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-50px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-height: 90vh;
+  overflow-y: auto;
+  color: var(--jm-modal-text-light); /* Texto oscuro en modo claro */
+}
+
+body.jm-dark-mode .jm-modal-content {
+  background-color: var(--jm-card-bg-dark);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  color: var(--jm-modal-text-dark); /* Texto claro en modo oscuro */
+}
+
+.jm-modal.active .jm-modal-content {
+  transform: translateY(0);
+}
+
+.jm-close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--jm-color-gray);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.jm-close-modal:hover {
+  color: var(--jm-color-primary);
+}
+
+.jm-modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--jm-color-primary);
+  text-align: center;
+}
+
+.jm-modal-body {
+  margin-bottom: 20px;
+  color: inherit; /* Hereda el color del modal-content */
+}
+
+.jm-modal-section {
+  margin-bottom: 25px;
+}
+
+.jm-modal-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: inherit; /* Hereda el color del modal-content */
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.jm-modal-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--jm-color-primary);
+}
+
+.jm-tech-list, .jm-features-list {
+  list-style-type: none;
+  padding: 0;
+  color: inherit; /* Hereda el color del modal-content */
+}
+
+.jm-tech-list li, .jm-features-list li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 30px;
+  color: inherit; /* Hereda el color del modal-content */
+}
+
+.jm-tech-list li::before, .jm-features-list li::before {
+  content: '•';
+  color: var(--jm-color-primary);
+  font-size: 1.5em;
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+
+.jm-tech-icon {
+  margin-right: 10px;
+}
+
+.jm-modal-footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.jm-modal-close-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+}
+/* [Todos tus estilos CSS anteriores permanecen iguales] */
+    
+    /* Nuevos estilos para el video y el PDF */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* Relación 16:9 */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      max-width: 900px;
+      height: 600px;
+      display: block;
+      margin: 0 auto;
+      border: none;
+    }
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .jm-projects-grid {
+    gap: 15px;
+  }
+
+  .jm-filter-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .jm-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .jm-modal-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .jm-header h1 {
+    font-size: 2rem;
+  }
+
+  .jm-projects-grid {
+    gap: 10px;
+  }
+
+  .jm-project-card {
+    margin-bottom: 20px;
+  }
+
+  .jm-modal-title {
+    font-size: 1.5rem;
+  }
+}

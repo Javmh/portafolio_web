@@ -1,0 +1,87 @@
+/* Estilo del Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Aseguramos que el modal esté encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Eliminar el scroll de la página de fondo */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro por defecto */
+    transition: background-color 0.3s ease-in-out; /* Transición suave para el cambio de color */
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%; /* Ajustar el tamaño al 90% del ancho de la pantalla */
+    max-width: 1200px; /* Ancho máximo */
+    max-height: 90vh; /* Limitar la altura del modal al 90% de la altura de la pantalla */
+    overflow-y: auto; /* Permitir desplazamiento solo en el eje Y */
+    overflow-x: hidden; /* Deshabilitar el scroll horizontal */
+    box-sizing: border-box; /* Incluir el padding en el cálculo del ancho y alto */
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+  }
+
+  /* Fondo del contenido de la página para evitar superposiciones */
+  .main-container {
+    position: relative;
+    z-index: 1; /* Aseguramos que el contenido esté por debajo del modal */
+  }
+
+  /* Estilos adicionales si estamos en el modo oscuro */
+  .modal-dark .modal-content {
+    background-color: #222; /* Fondo oscuro para el contenido del modal */
+  }
+
+  .modal-dark {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro para el modal en modo oscuro */
+  }
+
+  /* Asegurarse que el modal no se desborde de la ventana */
+  .modal-content {
+    overflow-y: auto; /* Habilitar el scroll vertical solo en el contenido */
+  }
+
+  /* Estilo del interruptor de modo oscuro */
+  .toggle-darkmode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .toggle-darkmode.active {
+    background-color: #333;
+    border-color: #fff;
+  }
+
+  .toggle-darkmode span {
+    color: #333;
+    font-size: 20px;
+  }
+
+  .toggle-darkmode.active span {
+    color: #fff;
+  }

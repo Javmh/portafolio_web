@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javier Meza - Diseñador Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="/static/imagenes/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<link rel="stylesheet" href="/static/css/sidebar.css">
+<!-- Botón de modo oscuro (pantallas grandes) -->
+  <div class="mode-container">
+    <button id="toggle-mode" class="toggle-mode" aria-label="Alternar modo oscuro/claro">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <!-- Botón de modo oscuro (pantallas pequeñas) -->
+  <div class="mobile-mode-container">
+    <button id="mobile-toggle-mode" class="mobile-toggle-mode" aria-label="Alternar modo oscuro/claro">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <!-- Menú lateral (pantallas grandes) -->
+  <div class="menu-container">
+    <a href="/" class="menu-btn active">
+      <i class="fas fa-home"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="/sobre_mi/" class="menu-btn">
+      <i class="fas fa-user"></i>
+      <span>Información</span>
+    </a>
+    <a href="/trabajos_demo/" class="menu-btn">
+      <i class="fas fa-briefcase"></i>
+      <span>Portafolio</span>
+    </a>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=javier.ocyt@gmail.com" 
+    class="menu-btn" 
+    target="_blank">
+      <i class="fas fa-envelope"></i>
+      <span>Correo</span>
+    </a>
+  </div>
+
+  <!-- Menú inferior (pantallas pequeñas) -->
+  <div class="mobile-menu">
+    <a href="/" class="active"><i class="fas fa-home"></i></a>
+    <a href="/sobre_mi/"><i class="fas fa-user"></i></a>
+    <a href="/trabajos_demo/"><i class="fas fa-briefcase"></i></a>
+    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=javier.ocyt@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+
+
+</head>
+<!-- Incluir el archivo script.js -->
+<script src="/static/js/sidebar.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Cargar Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/sobre_mi.css">
+</head>
+  
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SOBRE <span>MI</span></h1>
+        </div>
+
+        <div class="container-columns">
+            <div class="personal-info">
+                <h2>INFORMACION PERSONAL</h2>
+                <div class="info">
+                    <div><span>Nombres:</span><span class="value">Luis Javier</span></div>
+                    <div><span>Apellido:</span><span class="value">Meza Huaranga</span></div>
+                    <div><span>Edad:</span><span class="value">28 Años</span></div>
+                    <div><span>Nacionalidad:</span><span class="value">Peruano</span></div>
+                    <div><span>Independiente:</span><span class="value" style="color: #00ff00;">Disponible</span></div>
+                    <div><span>Dirección:</span><span class="value">Jr. Machu Picchu 1005</span></div>
+                    <div><span>Número Celular:</span><span class="value">+51 953590127</span></div>
+                    <div><span>Email:</span><span class="value">javier.ocyt@gmail.com</span></div>
+                    <div><span>Linkedin:</span><span class="value">luis-javier-mh</span></div>
+                    <div><span>Idiomas:</span><span class="value">Español, Ingles</span></div>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="column"><span>7+</span><span class="label">AÑOS DE EXPERIENCIA</span></div>
+                <div class="column"><span>10+</span><span class="label">PROYECTOS COMPLETADOS</span></div>
+                <div class="column"><span>81+</span><span class="label">CLIENTES FELICES</span></div>
+                <div class="column"><span>53+</span><span class="label">RECONOCIMIENTOS</span></div>
+            </div>
+        </div>
+
+        <div class="personal-info">
+            <h2>HABILIDADES</h2>
+            <div class="skills">
+                <div class="skill"><p>HTML</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 90%;"></div><span class="percentage">90%</span></div>
+                </div>
+                <div class="skill"><p>JAVASCRIPT</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 85%;"></div><span class="percentage">85%</span></div>
+                </div>
+                <div class="skill"><p>CSS</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 75%;"></div><span class="percentage">75%</span></div>
+                </div>
+                <div class="skill"><p>PYTHON</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 70%;"></div><span class="percentage">70%</span></div>
+                </div>
+                <div class="skill"><p>WORDPRESS</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 95%;"></div><span class="percentage">95%</span></div>
+                </div>
+                <div class="skill"><p>JQUERY</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 60%;"></div><span class="percentage">60%</span></div>
+                </div>
+                <div class="skill"><p>ANGULAR</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 80%;"></div><span class="percentage">80%</span></div>
+                </div>
+                <div class="skill"><p>REACT</p>
+                    <div class="progress-container"><div class="progress-bar" style="--target-width: 65%;"></div><span class="percentage">65%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Animación de las barras de progreso en bucle
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            function animateBars() {
+                progressBars.forEach(bar => {
+                    // Reiniciar la animación
+                    bar.style.animation = 'none';
+                    void bar.offsetWidth; // Trigger reflow
+                    bar.style.animation = 'progressAnimation 6s infinite ease-in-out';
+                });
+            }
+            
+            // Iniciar animación
+            animateBars();
+            
+            // Opcional: Reiniciar animación cada cierto tiempo para un bucle más visible
+            setInterval(animateBars, 30000);
+        });
+    </script>
+</body>
+</html>

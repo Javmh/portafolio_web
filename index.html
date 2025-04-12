@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Carga</title>
+  
+  <!-- Incluir fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Enlace al archivo CSS desde static -->
+  <link rel="stylesheet" href="static/css/style_loading.css">
+</head>
+<body>
+  <div class="loader-container">
+    <!-- Enlace a la imagen desde static -->
+    <img src="static/imagenes/preloader.gif" alt="Cargando..." class="loader">
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div> <!-- Barra de progreso -->
+    </div>
+    <p class="loading-percentage" id="loading-percentage">0%</p> <!-- Texto de porcentaje -->
+  </div>
+
+  <!-- Enlace al archivo JavaScript desde static -->
+  <script src="static/js/loading.js"></script>
+</body>
+</html>
