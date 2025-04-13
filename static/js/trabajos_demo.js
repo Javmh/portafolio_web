@@ -43,25 +43,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // 4. Construir contenido del modal según el tipo de medio
       if (mediaType === 'video') {
-        let extraImageHTML = '';
+        // Solo agregar imagen al proyecto 6 (Análisis)
         if (title === 'Análisis de Datos') {
-          extraImageHTML = `
-            
+          modalContent.innerHTML = `
+            <div class="video-container">
+              <iframe src="${mediaSrc}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+                       <div class="jm-modal-section">
+              <h3>Descripción del Dashboard</h3>
+            <div class="jm-modal-image">
+              <img src="../static/imagenes/proyecto 1.png" alt="Dashboard de terremotos" style="max-width: 100%; margin: 1rem 0; border-radius: 8px;">
+            </div>
+            <p>
+                Desarrollé una aplicación web tipo CRUD (Crear, Leer, Actualizar, Eliminar) utilizando <strong>Python</strong> y el microframework <strong>Flask</strong>. Este proyecto permite gestionar registros tanto de <strong>usuarios</strong> como de <strong>empleados</strong>, incluyendo funcionalidades como autenticación, validación de datos y generación de <strong>reportes dinámicos</strong>.
+              </p>
+              <p>
+                El sistema está enfocado en la <strong>organización eficiente de información</strong>, con una interfaz simple y funcional. Utilicé plantillas HTML con Jinja2, integré Bootstrap para el diseño responsivo y MySQL como base de datos.
+              </p>
+            </div>
+          `;
+        } else {
+          modalContent.innerHTML = `
+            <div class="video-container">
+              <iframe src="${mediaSrc}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="jm-modal-section">
+              <h3>Descripción del Proyecto</h3>
+              <p>
+                Desarrollé una aplicación web tipo CRUD (Crear, Leer, Actualizar, Eliminar) utilizando <strong>Python</strong> y el microframework <strong>Flask</strong>. Este proyecto permite gestionar registros tanto de <strong>usuarios</strong> como de <strong>empleados</strong>, incluyendo funcionalidades como autenticación, validación de datos y generación de <strong>reportes dinámicos</strong>.
+              </p>
+              <p>
+                El sistema está enfocado en la <strong>organización eficiente de información</strong>, con una interfaz simple y funcional. Utilicé plantillas HTML con Jinja2, integré Bootstrap para el diseño responsivo y MySQL como base de datos.
+              </p>
+            </div>
           `;
         }
-
-        modalContent.innerHTML = `
-          ${extraImageHTML}
-          <div class="video-container">
-            <iframe src="${mediaSrc}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          <div class="jm-modal-section">
-            <h3>Descripción del Proyecto</h3>
-            <div class="jm-modal-image">
-              <img src="static/imagenes/proyecto 1.png" alt="Imagen del Proyecto 6" style="max-width: 100%; margin: 1rem 0; border-radius: 8px;">
-            </div>
-            </div>
-        `;
       } else if (mediaType === 'pdf') {
         modalContent.innerHTML = `
           <iframe class="pdf-viewer" src="${mediaSrc}"></iframe>
@@ -71,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
         `;
       } else if (mediaType === 'tableau') {
+        // Proyecto 7 con imagen de internet
         modalContent.innerHTML = `
           <div class="tableau-container">
             <div class='tableauPlaceholder' id='viz${Date.now()}' style='position: relative'>
@@ -98,8 +115,8 @@ document.addEventListener('DOMContentLoaded', function () {
           </div>
           <div class="jm-modal-section">
             <h3>Descripción del Dashboard</h3>
-              <div class="jm-modal-image">
-              <img src="static/imagenes/proyecto 2.png" alt="Imagen del Proyecto 6" style="max-width: 100%; margin: 1rem 0; border-radius: 8px;">
+            <div class="jm-modal-image">
+              <img src="../static/imagenes/proyecto 2.png" alt="Dashboard de terremotos" style="max-width: 100%; margin: 1rem 0; border-radius: 8px;">
             </div>
           </div>
         `;
