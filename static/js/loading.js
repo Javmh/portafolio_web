@@ -48,7 +48,7 @@ async function loadResources() {
   // Cuando todos los recursos estén cargados, redirige a home.html
   setTimeout(() => {
   
-    window.location.href = "/home"; // Redirige a la página de inicio
+    window.location.href = "/portafolio_web/home/index.html"; // Redirige a la página de inicio
   }, 500);
 
      }
