@@ -1,15 +1,15 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Javier Meza - Diseñador Web</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="/static/imagenes/favicon.png" type="image/x-icon">
+  <link rel="icon" href="../static/imagenes/favicon.png" type="image/x-icon">
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link rel="stylesheet" href="/static/css/sidebar.css">
+<link rel="stylesheet" href="../static/css/sidebar.css">
 <!-- Botón de modo oscuro (pantallas grandes) -->
   <div class="mode-container">
     <button id="toggle-mode" class="toggle-mode" aria-label="Alternar modo oscuro/claro">
@@ -24,40 +24,28 @@
     </button>
   </div>
 
-  <!-- Menú lateral (pantallas grandes) -->
-  <div class="menu-container">
-    <a href="/" class="menu-btn active">
-      <i class="fas fa-home"></i>
-      <span>Inicio</span>
-    </a>
-    <a href="/sobre_mi/" class="menu-btn">
-      <i class="fas fa-user"></i>
-      <span>Información</span>
-    </a>
-    <a href="/trabajos_demo/" class="menu-btn">
-      <i class="fas fa-briefcase"></i>
-      <span>Portafolio</span>
-    </a>
-    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=javier.ocyt@gmail.com" 
-    class="menu-btn" 
-    target="_blank">
-      <i class="fas fa-envelope"></i>
-      <span>Correo</span>
-    </a>
-  </div>
+<!-- Menú lateral (pantallas grandes) -->
+<div class="menu-container">
+  <a href="/portafolio_web/index.html" class="menu-btn"><i class="fas fa-home"></i><span>Inicio</span></a>
+  <a href="/portafolio_web/sobre_mi/index.html" class="menu-btn active"><i class="fas fa-user"></i><span>Información</span></a>
+  <a href="/portafolio_web/trabajos_demo/index.html" class="menu-btn"><i class="fas fa-briefcase"></i><span>Portafolio</span></a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javier.ocyt@gmail.com" target="_blank" class="menu-btn">
+    <i class="fas fa-envelope"></i><span>Correo</span>
+  </a>
+</div>
 
-  <!-- Menú inferior (pantallas pequeñas) -->
-  <div class="mobile-menu">
-    <a href="/" class="active"><i class="fas fa-home"></i></a>
-    <a href="/sobre_mi/"><i class="fas fa-user"></i></a>
-    <a href="/trabajos_demo/"><i class="fas fa-briefcase"></i></a>
-    <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=javier.ocyt@gmail.com"><i class="fas fa-envelope"></i></a>
-  </div>
+<!-- Menú inferior (pantallas pequeñas) -->
+<div class="mobile-menu">
+  <a href="/portafolio_web/index.html"><i class="fas fa-home"></i></a>
+  <a href="/portafolio_web/sobre_mi/index.html" class="active"><i class="fas fa-user"></i></a>
+  <a href="/portafolio_web/trabajos_demo/index.html"><i class="fas fa-briefcase"></i></a>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=javier.ocyt@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
 
 
 </head>
 <!-- Incluir el archivo script.js -->
-<script src="/static/js/sidebar.js"></script>
+<script src="../static/js/sidebar.js"></script>
   <!DOCTYPE html>
   <html lang="es">
   <head>
@@ -65,7 +53,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio - Javier Meza</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/trabajos_demo.css">
+    <link rel="stylesheet" href="../static/css/trabajos_demo.css">
 
   </head>
   <body>
@@ -90,7 +78,7 @@
         <!-- Proyecto 1 -->
         <div class="jm-project-card jm-web-project jm-active" data-jm-category="web">
           <div class="jm-project-image">
-            <img src="/static/imagenes/webdesing1.jpg" alt="Proyecto Web 1">
+            <img src="../static/imagenes/webdesing1.jpg" alt="Proyecto Web 1">
           </div>
           <div class="jm-project-info">
             <h3>Sitio Web Corporativo: Clínica Ortega</h3>
@@ -113,7 +101,7 @@
         <!-- Proyecto 2 -->
         <div class="jm-project-card jm-web-project jm-active" data-jm-category="web">
           <div class="jm-project-image">
-            <img src="/static/imagenes/webdesing2.jpg" alt="Proyecto Web 2">
+            <img src="../static/imagenes/webdesing2.jpg" alt="Proyecto Web 2">
           </div>
           <div class="jm-project-info">
             <h3>Sitio Web Corporativo: Diplomados Acid</h3>
@@ -136,7 +124,7 @@
         <!-- Proyecto 3 -->
         <div class="jm-project-card jm-web-project jm-active" data-jm-category="web">
           <div class="jm-project-image">
-            <img src="/static/imagenes/webdesing3.jpg" alt="Proyecto Web 3">
+            <img src="../static/imagenes/webdesing3.jpg" alt="Proyecto Web 3">
           </div>
           <div class="jm-project-info">
             <h3>Sitio Web Corporativo: Andamayo Dental Center</h3>
@@ -159,7 +147,7 @@
         <!-- NUEVO PROYECTO 4 CON VIDEO DE YOUTUBE -->
         <div class="jm-project-card jm-web-project jm-active" data-jm-category="web">
           <div class="jm-project-image">
-            <img src="/static/imagenes/webdesing4.jpg" alt="Demo Video">
+            <img src="../static/imagenes/webdesing4.jpg" alt="Demo Video">
           </div>
           <div class="jm-project-info">
             <h3>Proceso CRUD</h3>
@@ -178,7 +166,7 @@
         <!-- Proyecto 5 (Publicidad con PDF) -->
         <div class="jm-project-card jm-active" data-jm-category="publicidad">
           <div class="jm-project-image">
-            <img src="/static/imagenes/desinggraphics1.jpg" alt="Campaña Publicitaria">
+            <img src="../static/imagenes/desinggraphics1.jpg" alt="Campaña Publicitaria">
           </div>
           <div class="jm-project-info">
             <h3>Especialista en Diseño Gráfico</h3>
@@ -197,7 +185,7 @@
 <!-- Proyecto 6 - Video de Análisis -->
 <div class="jm-project-card jm-active" data-jm-category="analisis">
   <div class="jm-project-image">
-    <img src="/static/imagenes/dataanalitics1.jpg" alt="Video de Análisis">
+    <img src="../static/imagenes/dataanalitics1.jpg" alt="Video de Análisis">
   </div>
   <div class="jm-project-info">
     <h3>Dashboard 1: Analisis de datos de ventas</h3>
@@ -216,7 +204,7 @@
 <!-- Proyecto 7 - Dashboard Tableau -->
 <div class="jm-project-card jm-active" data-jm-category="analisis">
   <div class="jm-project-image">
-    <img src="/static/imagenes/dataanalitics2.jpg" alt="Dashboard Tableau">
+    <img src="../static/imagenes/dataanalitics2.jpg" alt="Dashboard Tableau">
   </div>
   <div class="jm-project-info">
     <h3>Dashboard de Terremotos en Perú</h3>
@@ -250,6 +238,6 @@
   </div>
 </div>
 
-    <script src="/static/js/trabajos_demo.js"></script>
+    <script src="../static/js/trabajos_demo.js"></script>
   </body>
   </html>

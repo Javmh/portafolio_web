@@ -7,20 +7,31 @@
   
   <!-- Incluir fuentes de Google -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Enlace al archivo CSS desde static -->
-  <link rel="stylesheet" href="static/css/style_loading.css">
+  
+  <!-- Enlace correcto al archivo CSS -->
+  <link rel="stylesheet" href="../static/css/style_loading.css">
 </head>
 <body>
   <div class="loader-container">
-    <!-- Enlace a la imagen desde static -->
-    <img src="static/imagenes/preloader.gif" alt="Cargando..." class="loader">
+    <!-- Enlace correcto a la imagen -->
+    <img src="../static/imagenes/preloader.gif" alt="Cargando..." class="loader">
+    
     <div class="progress-bar">
-      <div class="progress" id="progress"></div> <!-- Barra de progreso -->
+      <div class="progress" id="progress"></div>
     </div>
-    <p class="loading-percentage" id="loading-percentage">0%</p> <!-- Texto de porcentaje -->
+    
+    <p class="loading-percentage" id="loading-percentage">0%</p>
   </div>
 
-  <!-- Enlace al archivo JavaScript desde static -->
-  <script src="static/js/loading.js"></script>
+  <!-- Enlace correcto al JS -->
+  <script src="../static/js/loading.js"></script>
+
+  <!-- Redirección al completar la carga -->
+  <script>
+    // Tiempo de espera para redirigir (en milisegundos)
+    setTimeout(function() {
+      window.location.href = "/portafolio_web/home/index.html";
+    }, 3000);  // 3000 ms = 3 segundos
+  </script>
 </body>
 </html>
